@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: var(--tg-theme-text-color);
+    background-color: var(--tg-theme-bg-color);
+    margin: 0px;
+}
+
+button.btn0 {
+	border: 2px solid black;
+	margin: 20px;
+    height: 70px; /* Новая высота кнопки */
+    width: 150px; /* Новая ширина кнопки */
+    font-size: 18px; /* Новый размер шрифта кнопки */
+}
+
+button.btn1 {
+	border: 2px solid black;
+    margin: 40px;
+    height: 70px; /* Новая высота кнопки */
+    width: 150px; /* Новая ширина кнопки */
+    font-size: 18px; /* Новый размер шрифта кнопки */
+}
+
+img.bot {
+    width: 150px; /* Новая ширина изображения */
+    margin: 20px auto; /* Новый отступ у изображения */
+}
+
+#main {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+	text-align: center;
+}
+
+p {
+	margin-top: 20px;
+}
+
+img {
+    width: 100px;
+    margin: 10px auto;
+}
+
+button {
+	border: 2px solid black;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    font-size: 10px;
+    font-weight: 30;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: var(--tg-theme-button-color);
+    background: var(--tg-theme-button-text-color); /* Исправлено свойство background */
+}
+
+button:hover {
+    background: #dece78;
+}
+
+:root {
+    --tg-theme-text-color: #4b280a;
+    --tg-theme-bg-color: white;
+    --tg-theme-button-color: #333; /* Добавлен цвет текста кнопки */
+    --tg-theme-button-text-color: green; /* Изменен цвет фона кнопки */
+}
+
+#form {
+    display: none;
+    width: 90%;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#tea {
+	display: none;
+}
+
+input {
+    width: 98%;
+    outline: none;
+    margin: 10px 1%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    outline: none;
+    margin: 10px 1%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #4b280a;
+}
+
+#form {
+  max-width: 400px; /* Ширина формы */
+  margin: 0 auto;   /* Устанавливаем автоматичесные отступы слева и справа для центрирования */
+}
+
+#form label span {
+    color: red;
+}
+
+#form label,
+#form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#form input {
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+/* Стили из style_tea.css */
+
+.container {
+    display: none;
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 160px 160px;
+    gap: 20px;
+}
+
+.usercard {
+  text-align: center; /* Для выравнивания по центру */
+  font-weight: bold;   /* Для использования жирного шрифта */
+}
+
+.img {
+    width: 100px;
+}
+
+.item {
+    text-align: center;
+    height: 100px;
+	margin-bottom: 60px; /* Добавьте отступ снизу между элементами */
+}
+
+.btn {
+	border: 2px solid black;
+    display: inline-block;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
+}
+
+.btn:hover {
+    background: lightgreen;
+}
+
+.usercard {
+    text-align: center;
+}
+
+/* Корзина */
+#cart {
+	display: none;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+}
+
+#total {
+    font-weight: bold;
+}
+
+#clear-cart {
+    margin-top: 15px;
+}
+
+#checkout {
+	margin-top: 15px;
+}
+
+#user_obym {
+	width: 100px;
+}
