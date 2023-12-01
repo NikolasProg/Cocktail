@@ -1,3 +1,4 @@
+$(".phone_mask").mask("+7(999)999-99-99");  
 $(document).ready(function () {
     var cartItems = [];
     var total = 0;
@@ -92,8 +93,11 @@ $(document).ready(function () {
         fillUserData();
     });
 
+   let tg = window.Telegram.WebApp;
     var buy = $("#buy");
     var order = $("#order");
+
+    tg.expand();
 
     buy.click(function () {
         $("#main, #form").hide();
@@ -101,30 +105,37 @@ $(document).ready(function () {
     });
 
     order.click(function () {
-        $("#cocktails, #form").hide();
-        fillUserData();
+    $("#error").text('');
+    let name = $("#user_name").val();
+    let email = $("#user_email").val();
+    let phone = $("#user_phone").val();
+    let koment = $("#user_koment").val();
+    let items = $("#cart-items").text();
+    let total = $("#total").text();
 
-        $("#error").text('');
-        var name = $("#user_name").val();
-        var email = $("#user_email").val();
-        var phone = $("#user_phone").val();
-        var koment = $("#user_koment").val();
+    if (name.length < 5) {
+        $("#error").text("Ошибка в имени");
+        return;
+    }
+    if (email.length < 5) {
+        $("#error").text("Ошибка в email");
+        return;
+    }
+    if (phone.length < 5) {
+        $("#error").text("Ошибка в номере телефона");
+        return;
+    }
 
-        if (name.length < 5 || email.length < 5 || phone.length < 5) {
-            $("#error").text("Ошибка в одном из полей");
-            return;
-        }
+    let data = {
+        name: name,
+        email: email,
+        phone: phone,
+        koment: koment,
+        items: items,
+        total: total
+    }
 
-        var data = {
-            name: name,
-            email: email,
-            phone: phone,
-            koment: koment,
-            items: cartItems,
-            total: total
-        }
-
-        tg.sendData(JSON.stringify(data));
-        tg.close();
-    });
+    tg.sendData(JSON.stringify(data));
+    tg.close();
+});
 });
